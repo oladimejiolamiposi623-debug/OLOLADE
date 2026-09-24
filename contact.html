@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | LADE LUXURY TRENDZ — Nigerian Haute Fashion Boutique</title>
+  <meta name="description" content="Connect with Lade Luxury Trendz. Schedule a private boutique styling session, inquire about custom tailoring, or visit our luxury showroom in Nigeria.">
+  <meta name="keywords" content="Contact Lade Luxury Trendz, Luxury boutique Nigeria address, Book styling Lagos, Nigerian fashion consultation">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    /* Contact Form Luxury Styles */
+    .form-group {
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-soft-gold);
+      font-weight: 500;
+    }
+
+    .form-control {
+      background: rgba(36, 23, 15, 0.7);
+      border: 1px solid rgba(199, 165, 106, 0.28);
+      color: var(--color-ivory);
+      padding: 14px 18px;
+      font-size: 0.92rem;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+    }
+
+    .form-control:focus {
+      border-color: var(--color-champagne);
+      box-shadow: 0 0 15px rgba(199, 165, 106, 0.2);
+    }
+
+    .form-control option {
+      background: var(--color-espresso);
+      color: var(--color-ivory);
+    }
+
+    .contact-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .contact-card-box {
+      background: var(--color-card-gradient);
+      border: 1px solid rgba(199, 165, 106, 0.2);
+      padding: 44px;
+      box-shadow: var(--shadow-luxury);
+    }
+
+    .map-placeholder-box {
+      background: #140E0A;
+      border: 1px solid rgba(199, 165, 106, 0.25);
+      height: 400px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .map-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(199, 165, 106, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(199, 165, 106, 0.07) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-location">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Flagship Boutique: [STORE ADDRESS, NIGERIA]</span>
+      </div>
+      <div class="top-bar-message">
+        <span>VIP Concierge &bull; Private Dressing Salons &bull; Direct WhatsApp Bookings</span>
+      </div>
+      <div class="top-bar-contact">
+        <span>Concierge: [PHONE NUMBER]</span>
+        <button class="currency-toggle-btn" style="background: none; border: 1px solid rgba(199,165,106,0.3); color: var(--color-champagne); padding: 2px 8px; font-size: 0.68rem; cursor: pointer;">NGN</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Luxury Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-logo-text">LADE LUXURY TRENDZ</span>
+        <span class="brand-logo-sub">NIGERIA &bull; HAUTE FASHION & LIFESTYLE</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="about.html" class="nav-link">ABOUT US</a>
+        <a href="services.html" class="nav-link">OUR SERVICES</a>
+        <a href="contact.html" class="nav-link active">CONTACT US</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://wa.me/2340000000000" target="_blank" class="action-icon-btn" title="Chat on WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <button class="action-icon-btn open-bag-btn" title="Shopping Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge-count bag-badge-count">1</span>
+        </button>
+        <a href="https://wa.me/2340000000000" target="_blank" class="btn btn-primary header-cta-btn">WHATSAPP VIP</a>
+        <button class="hamburger-btn" aria-label="Open Navigation Menu" id="hamburgerBtn">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">HOME</a>
+      <a href="about.html" class="mobile-nav-link">ABOUT US</a>
+      <a href="services.html" class="mobile-nav-link">OUR SERVICES</a>
+      <a href="contact.html" class="mobile-nav-link active">CONTACT US</a>
+    </nav>
+    <div class="mobile-nav-details">
+      <p><i class="fa-solid fa-location-dot text-gold"></i> [STORE ADDRESS, NIGERIA]</p>
+      <p><i class="fa-solid fa-phone text-gold"></i> [PHONE NUMBER]</p>
+      <p><i class="fa-brands fa-whatsapp text-gold"></i> [WHATSAPP NUMBER]</p>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       CONTACT HERO
+       ========================================================================== -->
+  <section class="section section-darker" style="padding: 130px 0 90px; background: linear-gradient(180deg, #140E0A 0%, var(--color-espresso) 100%);">
+    <div class="container">
+      <div style="max-width: 840px;" class="reveal reveal-up">
+        <span class="eyebrow-label has-line">PRIVATE CONCIERGE &amp; INQUIRIES</span>
+        <h1 class="section-title" style="font-size: clamp(2.8rem, 5.5vw, 4.4rem); line-height: 1.15; margin-bottom: 24px;">
+          LET'S CREATE <br>
+          <span class="text-gold">SOMETHING BEAUTIFUL</span>
+        </h1>
+        <p class="section-subtitle" style="font-size: 1.15rem; max-width: 740px;">
+          Whether you're searching for your next statement piece, planning a special occasion look or simply want to experience Lade Luxury Trendz, we'd love to hear from you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT INFORMATION & FORM
+       ========================================================================== -->
+  <section class="section section-dark section-pattern">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px;">
+        
+        <!-- Contact Information Column -->
+        <div class="reveal reveal-left">
+          <span class="eyebrow-label has-line">TOUCHPOINTS</span>
+          <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 24px;">REACH OUR CONCIERGE</h2>
+          <p class="text-muted" style="margin-bottom: 32px; font-size: 0.95rem; line-height: 1.8;">
+            Our client liaisons respond promptly during boutique hours. For immediate VIP assistance, private appointment booking, or styling consultations, connect with us directly.
+          </p>
+
+          <!-- Contact Details Cards -->
+          <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 36px;">
+            <div class="pillar-card" style="text-align: left; padding: 22px 26px;">
+              <span style="font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-champagne); display: block; margin-bottom: 6px;">
+                <i class="fa-solid fa-location-dot"></i> BOUTIQUE ADDRESS
+              </span>
+              <p style="color: var(--color-ivory); font-size: 1rem; font-family: var(--font-serif);">[STORE ADDRESS, NIGERIA]</p>
+            </div>
+
+            <div class="pillar-card" style="text-align: left; padding: 22px 26px;">
+              <span style="font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-champagne); display: block; margin-bottom: 6px;">
+                <i class="fa-solid fa-phone"></i> DIRECT TELEPHONE &amp; WHATSAPP
+              </span>
+              <p style="color: var(--color-ivory); font-size: 1rem; font-family: var(--font-serif);">Phone: [PHONE NUMBER]</p>
+              <p style="color: var(--color-soft-gold); font-size: 0.92rem; margin-top: 4px;">WhatsApp: [WHATSAPP NUMBER]</p>
+            </div>
+
+            <div class="pillar-card" style="text-align: left; padding: 22px 26px;">
+              <span style="font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-champagne); display: block; margin-bottom: 6px;">
+                <i class="fa-solid fa-envelope"></i> ELECTRONIC CORRESPONDENCE
+              </span>
+              <p style="color: var(--color-ivory); font-size: 1rem; font-family: var(--font-serif);">[EMAIL ADDRESS]</p>
+            </div>
+
+            <div class="pillar-card" style="text-align: left; padding: 22px 26px;">
+              <span style="font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-champagne); display: block; margin-bottom: 6px;">
+                <i class="fa-regular fa-clock"></i> OPENING HOURS
+              </span>
+              <p style="color: var(--color-ivory); font-size: 0.95rem;">[OPENING HOURS]</p>
+              <p style="font-size: 0.78rem; color: var(--color-warm-beige); opacity: 0.8; margin-top: 4px;">Private VIP styling outside standard hours by advance booking.</p>
+            </div>
+          </div>
+
+          <!-- Elegant WhatsApp Card -->
+          <div style="background: rgba(36, 23, 15, 0.8); border: 1px solid var(--color-champagne); padding: 26px; text-align: center;">
+            <i class="fa-brands fa-whatsapp text-gold" style="font-size: 2.2rem; margin-bottom: 12px; display: inline-block;"></i>
+            <h4 style="font-size: 1.2rem; color: var(--color-ivory); margin-bottom: 8px;">INSTANT STYLING ADVICE</h4>
+            <p style="font-size: 0.86rem; color: var(--color-warm-beige); margin-bottom: 18px;">
+              Chat directly with our senior styling team on WhatsApp for immediate sizing, availability, and orders.
+            </p>
+            <a href="[WHATSAPP LINK]" target="_blank" class="btn btn-primary" style="width: 100%;">CHAT WITH US ON WHATSAPP</a>
+          </div>
+        </div>
+
+        <!-- Premium Contact Form Column -->
+        <div class="reveal reveal-right">
+          <div class="contact-card-box">
+            <span class="eyebrow-label">CONSULTATION FORM</span>
+            <h3 style="font-size: 1.9rem; color: var(--color-ivory); margin-bottom: 12px;">SEND AN INQUIRY</h3>
+            <p style="font-size: 0.88rem; color: var(--color-warm-beige); margin-bottom: 30px;">
+              Complete the details below and a Lade Luxury Trendz styling director will be in touch.
+            </p>
+
+            <form id="ladeContactForm">
+              <div class="contact-form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="fullName">Full Name *</label>
+                  <input type="text" id="fullName" name="fullName" required class="form-control" placeholder="e.g. Chief Adeleke / Lady Folashade">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required class="form-control" placeholder="client@domain.com">
+                </div>
+              </div>
+
+              <div class="contact-form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="phone">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" required class="form-control" placeholder="+234 800 000 0000">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="inquiryType">Service / Inquiry Type</label>
+                  <select id="inquiryType" name="inquiryType" class="form-control">
+                    <option value="Personal Styling">Personal Styling</option>
+                    <option value="Custom Outfits">Custom Outfits &amp; Bespoke Tailoring</option>
+                    <option value="Wardrobe Curation">Wardrobe Curation</option>
+                    <option value="Special Occasion Styling">Special Occasion / Gala Styling</option>
+                    <option value="Gift Selection">Luxury Gift Selection</option>
+                    <option value="Private Boutique Visit">Private Boutique Visit</option>
+                    <option value="General Inquiry">General Boutique Inquiry</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactMethod">Preferred Contact Method</label>
+                <select id="contactMethod" name="contactMethod" class="form-control">
+                  <option value="WhatsApp">WhatsApp Message</option>
+                  <option value="Phone Call">Direct Phone Call</option>
+                  <option value="Email">Email</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message">Message / Occasion Details *</label>
+                <textarea id="message" name="message" rows="5" required class="form-control" placeholder="Describe your style preferences, upcoming occasion dates, or specific pieces of interest..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px;">
+                SEND INQUIRY
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       LOCATION & MAP SECTION
+       ========================================================================== -->
+  <section class="section section-darker">
+    <div class="container">
+      <div class="section-header-center reveal reveal-up">
+        <span class="eyebrow-label">OUR SHOWROOM</span>
+        <h2 class="section-title">VISIT LADE</h2>
+        <p class="section-subtitle">
+          Located in Nigeria, our flagship boutique offers an exquisite luxury atmosphere, personalized dressing salons, and complimentary valet service.
+        </p>
+      </div>
+
+      <!-- Styled Luxury Map Placeholder -->
+      <div class="map-placeholder-box reveal reveal-up">
+        <div class="map-grid-lines"></div>
+        <div style="position: relative; z-index: 2; text-align: center; padding: 20px;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--color-espresso); border: 2px solid var(--color-champagne); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: var(--color-champagne); font-size: 1.5rem; box-shadow: var(--shadow-gold-glow);">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; color: var(--color-ivory); margin-bottom: 8px;">LADE LUXURY TRENDZ FLAGSHIP</h3>
+          <p style="font-size: 0.95rem; color: var(--color-soft-gold); margin-bottom: 18px;">[STORE ADDRESS, NIGERIA]</p>
+          <a href="[GOOGLE MAP LOCATION]" target="_blank" class="btn btn-outline" style="padding: 10px 24px; font-size: 0.75rem;">
+            <i class="fa-solid fa-diamond-turn-right"></i> GET DIRECTIONS &bull; [GOOGLE MAP LOCATION]
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       LUXURY FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo">
+            <span class="brand-logo-text">LADE LUXURY TRENDZ</span>
+            <span class="brand-logo-sub">NIGERIA &bull; HAUTE FASHION & LIFESTYLE</span>
+          </a>
+          <p class="footer-brand-statement">
+            “Elevating everyday style through premium fashion, curated collections and exceptional service.”
+          </p>
+          <div class="footer-social-links">
+            <a href="[INSTAGRAM HANDLE]" class="social-circle-link" title="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="[FACEBOOK HANDLE]" class="social-circle-link" title="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="[TIKTOK HANDLE]" class="social-circle-link" title="TikTok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://wa.me/2340000000000" class="social-circle-link" title="WhatsApp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">NAVIGATION</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">BOUTIQUE &amp; SUPPORT</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>[STORE ADDRESS, NIGERIA]</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>[PHONE NUMBER]</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>[WHATSAPP NUMBER]</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>[EMAIL ADDRESS]</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-regular fa-clock"></i>
+            <span>[OPENING HOURS]</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">JOIN THE LADE CIRCLE</h4>
+          <p style="font-size: 0.88rem; color: var(--color-warm-beige); line-height: 1.6; margin-bottom: 14px;">
+            Subscribe to receive private invitations to new collection previews, VIP trunk shows, and editorial releases.
+          </p>
+          <form class="footer-newsletter-form">
+            <input type="email" placeholder="Your email address" required class="footer-input">
+            <button type="submit" class="footer-submit-btn">SUBSCRIBE</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Lade Luxury Trendz. All Rights Reserved.</div>
+        <div style="display: flex; gap: 24px;">
+          <span>Nigeria's Premier Luxury Fashion House</span>
+          <a href="contact.html" style="color: var(--color-champagne);">Concierge Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Concierge Button -->
+  <a href="https://wa.me/2340000000000?text=Hello%20Lade%20Luxury%20Trendz%2C%20I%20would%20like%20to%20visit%20your%20boutique." target="_blank" class="whatsapp-floating-btn pulse-gold" title="Chat on WhatsApp">
+    <div class="whatsapp-icon-circle"><i class="fa-brands fa-whatsapp"></i></div>
+    <span class="whatsapp-btn-text">CONCIERGE ON WHATSAPP</span>
+  </a>
+
+  <!-- Bag Drawer & Toast -->
+  <div class="modal-backdrop bag-backdrop"></div>
+  <div class="bag-drawer" id="bagDrawer">
+    <div class="bag-drawer-header">
+      <h3 style="font-size: 1.2rem; letter-spacing: 0.1em; color: var(--color-ivory);">YOUR LUXURY BAG</h3>
+      <button class="action-icon-btn bag-close-btn">&times;</button>
+    </div>
+    <div class="bag-drawer-items"></div>
+    <div class="bag-drawer-footer">
+      <div class="bag-subtotal-row">
+        <span>Subtotal</span>
+        <span class="bag-subtotal-val">₦450,000</span>
+      </div>
+      <button class="btn btn-primary bag-checkout-btn" style="width: 100%; margin-bottom: 10px;">INQUIRE / ORDER VIA WHATSAPP</button>
+    </div>
+  </div>
+
+  <div class="luxury-toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span class="toast-msg">Inquiry Submitted Successfully</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

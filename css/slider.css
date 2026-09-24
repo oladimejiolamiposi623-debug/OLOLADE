@@ -1,0 +1,359 @@
+/* ==========================================================================
+   LADE LUXURY TRENDZ — CINEMATIC HERO SLIDER (Slider Revolution Style)
+   Ken Burns Slow Zoom, Layered Text Reveals, Cinematic Transitions
+   ========================================================================== */
+
+.hero-slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 92vh;
+  min-height: 640px;
+  max-height: 960px;
+  overflow: hidden;
+  background-color: var(--color-black);
+}
+
+.hero-slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Individual Slide */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+/* Background Image & Ken Burns Zoom */
+.hero-slide-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 30%;
+  transform: scale(1.05);
+  transition: transform 9s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* Dynamic Ken Burns variations */
+.hero-slide.active .hero-slide-bg.kenburns-zoom-in {
+  transform: scale(1.15) translate(-1%, -1%);
+}
+
+.hero-slide.active .hero-slide-bg.kenburns-zoom-out {
+  transform: scale(1.02) translate(1%, 1%);
+}
+
+.hero-slide.active .hero-slide-bg.kenburns-pan-right {
+  transform: scale(1.12) translate(2%, 0);
+}
+
+.hero-slide.active .hero-slide-bg.kenburns-pan-left {
+  transform: scale(1.12) translate(-2%, 0);
+}
+
+/* Luxury Multi-Layer Vignette & Dark Overlay */
+.hero-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 60% 40%, rgba(13, 11, 9, 0.2) 0%, rgba(36, 23, 15, 0.65) 60%, rgba(13, 11, 9, 0.92) 100%);
+  z-index: 2;
+}
+
+.hero-slide-overlay-left {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(13, 11, 9, 0.9) 0%, rgba(36, 23, 15, 0.6) 45%, rgba(13, 11, 9, 0.15) 100%);
+  z-index: 3;
+}
+
+/* Content Container & Layered Text Animations */
+.hero-slide-content {
+  position: relative;
+  z-index: 4;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.hero-text-block {
+  max-width: 720px;
+}
+
+/* 1. Sub-Label / Brand */
+.hero-sublabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-champagne);
+  margin-bottom: 22px;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
+}
+
+.hero-sublabel::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--color-champagne);
+  display: inline-block;
+}
+
+/* 2. Main Luxury Headline */
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.12;
+  color: var(--color-ivory);
+  letter-spacing: 0.03em;
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.5s, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+}
+
+.hero-title .title-accent {
+  font-style: italic;
+  color: var(--color-champagne);
+  display: block;
+}
+
+/* 3. Supporting Description */
+.hero-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  color: var(--color-warm-beige);
+  line-height: 1.8;
+  max-width: 580px;
+  margin-bottom: 38px;
+  font-weight: 300;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 0.7s, transform 0.8s ease 0.7s;
+}
+
+/* 4. Action CTA */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease 0.9s, transform 0.8s ease 0.9s;
+}
+
+/* Active State Reveals (Staggered Animation) */
+.hero-slide.active .hero-sublabel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-slide.active .hero-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-slide.active .hero-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-slide.active .hero-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------- Slider Controls & UI ---------------- */
+
+/* Bottom Slide Progress Bar */
+.hero-progress-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+.hero-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--color-champagne-gradient);
+  transition: width 0.1s linear;
+}
+
+/* Slider Pagination Indicators & Numbering */
+.hero-pagination-bar {
+  position: absolute;
+  bottom: 40px;
+  right: var(--section-padding-x);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero-counter {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--color-champagne);
+  letter-spacing: 0.15em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-counter-current {
+  color: var(--color-ivory);
+  font-weight: 600;
+}
+
+.hero-counter-total {
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+
+.hero-dots-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-dot-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 0;
+  width: 38px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-dot-line {
+  width: 100%;
+  height: 2px;
+  background: rgba(199, 165, 106, 0.3);
+  transition: var(--transition-fast);
+}
+
+.hero-dot-btn.active .hero-dot-line {
+  background: var(--color-champagne);
+  height: 3px;
+}
+
+.hero-dot-btn:hover .hero-dot-line {
+  background: var(--color-soft-gold);
+}
+
+/* Slide Navigation Arrows */
+.hero-arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 52px;
+  height: 52px;
+  background: rgba(36, 23, 15, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(199, 165, 106, 0.25);
+  color: var(--color-ivory);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.hero-arrow-btn:hover {
+  background: var(--color-champagne);
+  color: var(--color-black);
+  border-color: var(--color-champagne);
+  box-shadow: var(--shadow-gold-glow);
+}
+
+.hero-arrow-prev {
+  left: 28px;
+}
+
+.hero-arrow-next {
+  right: 28px;
+}
+
+/* Scroll Down Prompt */
+.hero-scroll-prompt {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-warm-beige);
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+
+.hero-scroll-prompt:hover {
+  opacity: 1;
+  color: var(--color-champagne);
+}
+
+.scroll-indicator-mouse {
+  width: 20px;
+  height: 32px;
+  border: 1px solid var(--color-champagne);
+  border-radius: 12px;
+  position: relative;
+}
+
+.scroll-indicator-wheel {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 6px;
+  background: var(--color-champagne);
+  border-radius: 2px;
+  animation: scrollWheel 2s infinite ease-in-out;
+}
+
+@keyframes scrollWheel {
+  0% { transform: translate(-50%, 0); opacity: 1; }
+  50% { transform: translate(-50%, 10px); opacity: 0.2; }
+  100% { transform: translate(-50%, 0); opacity: 1; }
+}

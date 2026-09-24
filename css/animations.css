@@ -1,0 +1,108 @@
+/* ==========================================================================
+   LADE LUXURY TRENDZ — LUXURY ANIMATIONS & EFFECTS
+   Scroll reveal, Gold Shimmer, Parallax, Glassmorphic reflections
+   ========================================================================== */
+
+/* Scroll Reveal Observer Base */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.reveal-up {
+  transform: translateY(45px);
+}
+
+.reveal.reveal-left {
+  transform: translateX(-40px);
+}
+
+.reveal.reveal-right {
+  transform: translateX(40px);
+}
+
+.reveal.reveal-scale {
+  transform: scale(0.95);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Stagger Delays */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+
+/* Subtle Gold Shimmer & Light Sweep */
+.shimmer-gold {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-gold::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 20%,
+    rgba(216, 190, 138, 0.18) 50%,
+    transparent 80%
+  );
+  transform: rotate(30deg) translateX(-100%);
+  transition: transform 1.2s ease-in-out;
+  pointer-events: none;
+}
+
+.shimmer-gold:hover::after {
+  transform: rotate(30deg) translateX(100%);
+}
+
+/* Luxury Line Expansion on Hover */
+.expand-line-container {
+  position: relative;
+}
+
+.expand-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-champagne);
+  transition: width 0.4s ease;
+}
+
+.expand-line-container:hover .expand-line {
+  width: 100%;
+}
+
+/* Floating animation for subtle luxury badges */
+@keyframes floatGentle {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+/* Pulse Glow for WhatsApp Concierge */
+@keyframes pulseGoldGlow {
+  0% { box-shadow: 0 0 0 0 rgba(199, 165, 106, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(199, 165, 106, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(199, 165, 106, 0); }
+}
+
+.pulse-gold {
+  animation: pulseGoldGlow 3s infinite;
+}
